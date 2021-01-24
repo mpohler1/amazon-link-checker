@@ -31,6 +31,7 @@ public class AmazonLinkChecker {
     private static void doTask(TaskModel taskModel) throws WebpageElementSelectorException, MailServiceException {
         WebpageElementChecker elementChecker = new JsoupWebpageElementChecker();
 
+        // If the Amazon product page has an 'add to cart' button, then the product is in stock
         if (elementChecker.elementDoesExist(taskModel.getLink(), AMAZON_ADD_TO_CART_BUTTON_ID)) {
             MAIL_SERVICE.sendMail(
                     taskModel.getEmailSenderName(),
