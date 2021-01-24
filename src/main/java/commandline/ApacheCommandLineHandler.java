@@ -8,7 +8,7 @@ public class ApacheCommandLineHandler implements CommandLineHandler{
     private static final CommandLineParser PARSER = new DefaultParser();
     private static final Options HELP_ONLY_OPTIONS = OptionsFactory.createOptions(OptionsFactory.HELP_ONLY);
     private static final Options ALL_OPTIONS = OptionsFactory.createOptions(OptionsFactory.ALL);
-    private static final String HELP_STRING = "amazon-link-checker -n <product name> -l <product link>";
+    private static final String HELP_STRING = "amazon-productPageLink-checker -n <product productName> -l <product productPageLink>";
 
     public TaskModel parseCommandLine(String[] args) throws CommandLineHandlerException {
         try {
@@ -38,8 +38,8 @@ public class ApacheCommandLineHandler implements CommandLineHandler{
         TaskModel taskModel = new TaskModel();
         CommandLine commandLine = PARSER.parse(ALL_OPTIONS, args);
 
-        taskModel.setName(commandLine.getOptionValue(OptionTypes.NAME_OPTION));
-        taskModel.setLink(commandLine.getOptionValue(OptionTypes.LINK_OPTION));
+        taskModel.setProductName(commandLine.getOptionValue(OptionTypes.NAME_OPTION));
+        taskModel.setProductPageLink(commandLine.getOptionValue(OptionTypes.LINK_OPTION));
 
         if (commandLine.hasOption(OptionTypes.EMAIL_SENDER_NAME_OPTION)) {
             taskModel.setEmailSenderName(commandLine.getOptionValue(OptionTypes.EMAIL_SENDER_NAME_OPTION));

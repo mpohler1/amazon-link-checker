@@ -30,7 +30,7 @@ public class MailAPIService implements MailService {
 
     private StringEntity buildMailModel(String name, String email, String body) throws UnsupportedEncodingException {
         String mailModelJsonString = new JSONObject()
-                .put("name", name)
+                .put("productName", name)
                 .put("email", email)
                 .put("body", body)
                 .toString();

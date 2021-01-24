@@ -32,11 +32,11 @@ public class AmazonLinkChecker {
         WebpageElementChecker elementChecker = new JsoupWebpageElementChecker();
 
         // If the Amazon product page has an 'add to cart' button, then the product is in stock
-        if (elementChecker.elementDoesExist(taskModel.getLink(), AMAZON_ADD_TO_CART_BUTTON_ID)) {
+        if (elementChecker.elementDoesExist(taskModel.getProductPageLink(), AMAZON_ADD_TO_CART_BUTTON_ID)) {
             MAIL_SERVICE.sendMail(
                     taskModel.getEmailSenderName(),
                     taskModel.getEmailSenderAddress(),
-                    taskModel.getName() + " is back in stock.\n\n" + taskModel.getLink()
+                    taskModel.getProductName() + " is back in stock.\n\n" + taskModel.getProductPageLink()
             );
         }
     }

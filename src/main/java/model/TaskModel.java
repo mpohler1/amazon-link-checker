@@ -4,8 +4,8 @@ import lombok.Data;
 
 @Data
 public class TaskModel {
-    private String name;
-    private String link;
+    private String productName;
+    private String productPageLink;
     private String emailSenderName;
     private String emailSenderAddress;
 

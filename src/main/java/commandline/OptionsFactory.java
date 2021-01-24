@@ -40,20 +40,20 @@ public class OptionsFactory {
         Option nameOption = createRequiredOption(
                 OptionTypes.NAME_OPTION,
                 OptionTypes.NAME_OPTION_VERBOSE,
-                "product name",
-                "The name of the product on the Amazon product page"
+                "product productName",
+                "The productName of the product on the Amazon product page"
         );
         Option linkOption = createRequiredOption(
                 OptionTypes.LINK_OPTION,
                 OptionTypes.LINK_OPTION_VERBOSE,
-                "product link",
-                "The link to the Amazon product page"
+                "product productPageLink",
+                "The productPageLink to the Amazon product page"
         );
         Option emailSenderNameOption = createOptionalOption(
                 OptionTypes.EMAIL_SENDER_NAME_OPTION,
                 OptionTypes.EMAIL_SENDER_NAME_OPTION_VERBOSE,
-                "email name",
-                "The name of the email sender"
+                "email productName",
+                "The productName of the email sender"
         );
         Option emailSenderAddressOption = createOptionalOption(
                 OptionTypes.EMAIL_SENDER_ADDRESS_OPTION,
