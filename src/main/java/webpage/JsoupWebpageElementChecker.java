@@ -5,16 +5,13 @@ import org.jsoup.nodes.Document;
 import org.jsoup.select.Elements;
 
 import java.io.IOException;
-import java.util.Collections;
-import java.util.List;
 
-public class JsoupWebpageElementSelector implements WebpageElementSelector {
+public class JsoupWebpageElementChecker implements WebpageElementChecker {
 
-    @Override
-    public List<Object> selectElementsById(String link, String elementId) throws WebpageElementSelectorException {
+    public boolean elementDoesExist(String link, String elementId) throws WebpageElementSelectorException {
         try {
             Elements elements = getElementsWithElementId(link, elementId);
-            return Collections.singletonList(elements);
+            return !elements.isEmpty();
         } catch (IOException e) {
             throw new WebpageElementSelectorException(link);
         }
@@ -24,4 +21,5 @@ public class JsoupWebpageElementSelector implements WebpageElementSelector {
         Document document = Jsoup.connect(link).get();
         return document.select("#" + elementId);
     }
+
 }
