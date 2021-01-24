@@ -1,4 +1,4 @@
-package options;
+package commandline;
 
 public class OptionTypes {
     public static final String HELP_OPTION = "h";
