@@ -46,7 +46,7 @@ public class OptionsFactory {
         Option linkOption = createRequiredOption(
                 OptionTypes.LINK_OPTION,
                 OptionTypes.LINK_OPTION_VERBOSE,
-                "link",
+                "product link",
                 "The link to the Amazon product page"
         );
         Option emailSenderNameOption = createOptionalOption(
