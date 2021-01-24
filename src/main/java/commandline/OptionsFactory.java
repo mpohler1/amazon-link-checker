@@ -3,11 +3,11 @@ package commandline;
 import org.apache.commons.cli.Option;
 import org.apache.commons.cli.Options;
 
-public class OptionsFactory {
-    public static final int HELP_ONLY = 0;
-    public static final int ALL = 1;
+class OptionsFactory {
+    static final int HELP_ONLY = 0;
+    static final int ALL = 1;
 
-    public static Options createOptions(int mode) {
+    static Options createOptions(int mode) {
         switch (mode) {
             case HELP_ONLY:
                 return createHelpOnlyOptions();
@@ -40,20 +40,20 @@ public class OptionsFactory {
         Option nameOption = createRequiredOption(
                 OptionTypes.NAME_OPTION,
                 OptionTypes.NAME_OPTION_VERBOSE,
-                "product productName",
-                "The productName of the product on the Amazon product page"
+                "product name",
+                "The name of the product on the Amazon product page"
         );
         Option linkOption = createRequiredOption(
                 OptionTypes.LINK_OPTION,
                 OptionTypes.LINK_OPTION_VERBOSE,
-                "product productPageLink",
-                "The productPageLink to the Amazon product page"
+                "product page link",
+                "The link to the Amazon product page"
         );
         Option emailSenderNameOption = createOptionalOption(
                 OptionTypes.EMAIL_SENDER_NAME_OPTION,
                 OptionTypes.EMAIL_SENDER_NAME_OPTION_VERBOSE,
-                "email productName",
-                "The productName of the email sender"
+                "email name",
+                "The name of the email sender"
         );
         Option emailSenderAddressOption = createOptionalOption(
                 OptionTypes.EMAIL_SENDER_ADDRESS_OPTION,

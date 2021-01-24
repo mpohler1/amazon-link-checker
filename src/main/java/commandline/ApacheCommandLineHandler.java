@@ -8,7 +8,7 @@ public class ApacheCommandLineHandler implements CommandLineHandler{
     private static final CommandLineParser PARSER = new DefaultParser();
     private static final Options HELP_ONLY_OPTIONS = OptionsFactory.createOptions(OptionsFactory.HELP_ONLY);
     private static final Options ALL_OPTIONS = OptionsFactory.createOptions(OptionsFactory.ALL);
-    private static final String HELP_STRING = "amazon-productPageLink-checker -n <product productName> -l <product productPageLink>";
+    private static final String HELP_STRING = "amazon-link-checker -n <product name> -l <product page link>";
 
     public TaskModel parseCommandLine(String[] args) throws CommandLineHandlerException {
         try {
