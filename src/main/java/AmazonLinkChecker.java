@@ -22,11 +22,14 @@ public class AmazonLinkChecker {
             TaskModel taskModel = COMMAND_LINE_HANDLER.parseCommandLine(args);
             doTask(taskModel);
         } catch (CommandLineHandlerException e) {
+            System.out.println(new Date().toString() + e.getMessage());
             e.printStackTrace();
             COMMAND_LINE_HANDLER.printHelp();
         } catch (WebpageElementSelectorException e) {
+            System.out.println(new Date().toString() + e.getMessage());
             e.printStackTrace();
         } catch (MailServiceException e) {
+            System.out.println(new Date().toString() + e.getMessage());
             e.printStackTrace();
         }
     }
@@ -36,15 +39,15 @@ public class AmazonLinkChecker {
 
         // If the Amazon product page has an 'add to cart' button, then the product is in stock
         if (elementChecker.elementDoesExist(taskModel.getProductPageLink(), AMAZON_ADD_TO_CART_BUTTON_ID)) {
-            System.out.println("An add to cart button was found on " + new Date().toString());
+            System.out.println(new Date().toString() + "An add to cart button was found.");
             MAIL_SERVICE.sendMail(
                     taskModel.getEmailSenderName(),
                     taskModel.getEmailSenderAddress(),
                     taskModel.getProductName() + " is back in stock.\n\n" + taskModel.getProductPageLink()
             );
-            System.out.println("Sent email on " + new Date().toString());
+            System.out.println(new Date().toString() + "Sent email.");
         } else {
-            System.out.println("No add to cart button was found on " + new Date().toString());
+            System.out.println(new Date().toString() + "No add to cart button was found.");
         }
     }
 }
