@@ -50,7 +50,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>dk.tbsalling.ais.cli.AisCli</mainClass>
+                            <mainClass>AmazonLinkChecker</mainClass>
                         </manifest>
                     </archive>
                     <descriptorRefs>
