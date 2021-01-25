@@ -30,7 +30,6 @@ public class ApacheCommandLineHandler implements CommandLineHandler{
         try {
             CommandLine commandLine = PARSER.parse(HELP_ONLY_OPTIONS, args);
             if (commandLine.hasOption(OptionTypes.HELP_OPTION)) {
-                // TODO: add logging
                 throw new HelpOptionFoundException();
             }
         } catch (ParseException e) {
