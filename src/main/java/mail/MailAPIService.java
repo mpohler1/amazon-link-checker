@@ -14,7 +14,7 @@ import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 
 public class MailAPIService implements MailService {
-    private static final String API_URL = "https://api.masonpohler.com:9000/sendMail";
+    private static final String API_URL = "https://api.masonpohler.com:9000/mail/send";
 
     public void sendMail(String name, String email, String body) throws MailServiceException {
         try {

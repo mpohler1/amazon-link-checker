@@ -21,10 +21,13 @@ public class AmazonLinkChecker {
             doTask(taskModel);
         } catch (CommandLineHandlerException e) {
             COMMAND_LINE_HANDLER.printHelp();
+            // TODO: add logging
         } catch (WebpageElementSelectorException e) {
             e.printStackTrace();
+            // TODO: add logging
         } catch (MailServiceException e) {
             e.printStackTrace();
+            // TODO: add logging
         }
     }
 
@@ -38,6 +41,9 @@ public class AmazonLinkChecker {
                     taskModel.getEmailSenderAddress(),
                     taskModel.getProductName() + " is back in stock.\n\n" + taskModel.getProductPageLink()
             );
+            // TODO: add logging
+        } else {
+            // TODO: add logging
         }
     }
 }

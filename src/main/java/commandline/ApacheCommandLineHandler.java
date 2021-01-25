@@ -26,11 +26,15 @@ public class ApacheCommandLineHandler implements CommandLineHandler{
         formatter.printHelp(HELP_STRING, ALL_OPTIONS);
     }
 
-    private void checkForHelpOption(String[] args) throws ParseException, HelpOptionFoundException {
-        CommandLine commandLine = PARSER.parse(HELP_ONLY_OPTIONS, args);
-
-        if (commandLine.hasOption(OptionTypes.HELP_OPTION)) {
-            throw new HelpOptionFoundException();
+    private void checkForHelpOption(String[] args) throws HelpOptionFoundException {
+        try {
+            CommandLine commandLine = PARSER.parse(HELP_ONLY_OPTIONS, args);
+            if (commandLine.hasOption(OptionTypes.HELP_OPTION)) {
+                // TODO: add logging
+                throw new HelpOptionFoundException();
+            }
+        } catch (ParseException e) {
+            // no help option
         }
     }
 
